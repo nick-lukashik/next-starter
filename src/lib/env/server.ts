@@ -29,6 +29,13 @@ const schema = z
                 .default('info'),
         ),
         /** `noindex` (stage): robots.txt disallows everything, pages say noindex. */
+        /** Google Tag Manager container (GTM-ABC1234). Unset: no tag manager, and the CSP stays on this origin. */
+        GTM_ID: unsetIfBlank(
+            z
+                .string()
+                .regex(/^GTM-[A-Z0-9]{4,12}$/, 'a container id like GTM-ABC1234')
+                .optional(),
+        ),
         ROBOTS: unsetIfBlank(
             z
                 .enum([

@@ -69,6 +69,7 @@ export default defineConfig({
               }),
               site(NOINDEX_PORT, {
                   ROBOTS: 'noindex',
+                  GTM_ID: 'GTM-E2ETEST',
               }),
           ],
 })
