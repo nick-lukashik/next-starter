@@ -99,6 +99,7 @@ Both return `x-app-version`, which the post-deploy smoke check waits for. A back
 | `APP_VERSION` | `dev` | at startup (`x-app-version` header) |
 | `LOG_LEVEL` | `info` | at startup |
 | `ROBOTS` | `index` | per request; `noindex` blocks indexing (stage) |
+| `GTM_ID` | none | per request; Google Tag Manager container (`GTM-ABC1234`). Unset: no tag manager, and the CSP stays on this origin. Consent Mode starts at denied |
 
 ## Docker
 
