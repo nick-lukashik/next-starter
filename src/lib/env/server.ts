@@ -29,7 +29,7 @@ const schema = z
                 .default('info'),
         ),
         /** `noindex` (stage): robots.txt disallows everything, pages say noindex. */
-        /** Google Tag Manager container (GTM-ABC1234). Set: a consent banner, and the container after a yes. Unset: neither, and the CSP stays on this origin. */
+        /** Google Tag Manager container (GTM-ABC1234). Set: the container from the first visit, and a banner that can turn it off. Unset: neither, and the CSP stays on this origin. */
         GTM_ID: unsetIfBlank(
             z
                 .string()
