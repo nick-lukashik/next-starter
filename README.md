@@ -43,7 +43,7 @@ Production build locally: `pnpm build && pnpm start` (the same `server.js` as in
 ## Start a site from this template
 
 1. Create the repo from the template (GitHub "Use this template"); its CI publishes images, the template's own does not.
-2. Rename: `name` in `package.json`, `service` in `src/lib/logger.ts`, the image title in `Dockerfile`, `meta.siteName` in `src/i18n/messages/*.json`.
+2. Rename: `name` in `package.json`, `service` in `src/lib/logger.ts`, the image name in the comments of `Dockerfile`, `meta.siteName` in `src/i18n/messages/*.json`.
 3. Replace `src/app/page.tsx` and `src/app/about/` with the site's pages ("Adding a page"), and the e2e paths that name them (`e2e/a11y.spec.ts`, `e2e/seo.spec.ts`, `e2e/i18n.spec.ts`).
 4. gitops: `apps/<svc>/prod/` with `components/service` and `components/web`, the ConfigMap with `SITE_URL` and `ROBOTS` (gitops `apps/README.md`).
 
@@ -72,7 +72,7 @@ Dependencies: `@tanstack/react-query`, `@tanstack/react-query-devtools`, `sonner
 
 ## How it works
 
-**Locale.** `?lang=en|ru` > `locale` cookie > `en`; the browser's language does not decide. `?lang=` rewrites the cookie. `src/proxy.ts` picks the locale and the server renders `<html lang>`. Canonical is `/path?lang=<locale>`, hreflang lists both, `x-default` is the path without the parameter.
+**Locale.** `?lang=en|ru` > `locale` cookie > `en`; the browser's language does not decide. `?lang=` rewrites the cookie. `src/proxy.ts` picks the locale and the server renders `<html lang>`. Every URL of the hreflang cluster is its own canonical: `/path?lang=<locale>` points to itself, the bare path to the bare path. hreflang lists both languages, `x-default` is the path without the parameter.
 
 **Proxy.** `src/proxy.ts` gives every request a request id and `x-app-version`; pages also get the nonce CSP, the locale and `x-pathname` for metadata. It skips `/api`, where the API proxy goes once added (next-example explains why).
 
