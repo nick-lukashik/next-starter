@@ -51,5 +51,13 @@
         "title": "Page not found",
         "body": "There is no page at this address. It may have moved or never existed.",
         "home": "Go to the home page"
+    },
+    "consent": {
+        "label": "Statistics cookies",
+        "text": "We count visits with Google Analytics. It sets cookies and sends Google data about your visit. Only if you agree: until then nothing is loaded from Google.",
+        "more": "Privacy policy",
+        "accept": "Accept",
+        "decline": "Decline",
+        "settings": "Cookie settings"
     }
 }
