@@ -72,7 +72,7 @@ Dependencies: `@tanstack/react-query`, `@tanstack/react-query-devtools`, `sonner
 
 ## How it works
 
-**Locale.** `?lang=en|ru` > `locale` cookie > `en`; the browser's language does not decide. `?lang=` rewrites the cookie. `src/proxy.ts` picks the locale and the server renders `<html lang>`. Every URL of the hreflang cluster is its own canonical: `/path?lang=<locale>` points to itself, the bare path to the bare path. hreflang lists both languages, `x-default` is the path without the parameter.
+**Locale.** `?lang=en|ru` > `nl_locale` cookie, on the whole domain > `en`; the browser's language does not decide. `?lang=` rewrites the cookie. `src/proxy.ts` picks the locale and the server renders `<html lang>`. Every URL of the hreflang cluster is its own canonical: `/path?lang=<locale>` points to itself, the bare path to the bare path. hreflang lists both languages, `x-default` is the path without the parameter.
 
 **Proxy.** `src/proxy.ts` gives every request a request id and `x-app-version`; pages also get the nonce CSP, the locale and `x-pathname` for metadata. It skips `/api`, where the API proxy goes once added (next-example explains why).
 
