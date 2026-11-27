@@ -5,7 +5,7 @@
 # everything environment-specific (SITE_URL, ROBOTS) is runtime env.
 
 # base: the Node image every stage starts from. Renovate updates the tag.
-FROM node:26.13.0-trixie-slim AS base
+FROM node:26.13.1-trixie-slim AS base
 ENV NEXT_TELEMETRY_DISABLED=1
 WORKDIR /app
 
