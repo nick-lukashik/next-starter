@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # next-starter: rules for agents
 
-Website template: Next.js 16.4 (App Router, `output: 'standalone'`, React Compiler, typed routes), React 19.3, TypeScript 7 (strict), Node 26, pnpm 12, next-intl 4 (EN/RU, no locale in the URL), Zod 4, Tailwind 4, shadcn/ui (Radix), Pino, Biome, Vitest 5, Playwright 1.64 + axe. No backend: data from an API (proxy, TanStack Query, typed client) is added only when the site needs it, copied from `next-example` ("Add the API" in `README.md`).
+Website template: Next.js 16.4 (App Router, `output: 'standalone'`, React Compiler, typed routes), React 19.3, TypeScript 7 (strict), Node 26, pnpm 12, next-intl 4 (EN/RU, no locale in the URL), Zod 4, Tailwind 4, shadcn/ui (Radix), Pino, Biome, Vitest 5, Playwright 1.65 + axe. No backend: data from an API (proxy, TanStack Query, typed client) is added only when the site needs it, copied from `next-example` ("Add the API" in `README.md`).
 
 ## Library rules
 
